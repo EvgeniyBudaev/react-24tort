@@ -1,0 +1,60 @@
+/*-------------------- Import fonts --------------------*/
+@font-face {
+  font-family: "BaronNeue";
+  src: url("./assets/fonts/BaronNeue.eot"); /* IE9 Compat Modes */
+  src: url("./assets/fonts/BaronNeue.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("./assets/fonts/BaronNeue.otf") format("opentype"), /* Open Type Font */
+  url("./assets/fonts/BaronNeue.svg") format("svg"), /* Legacy iOS */
+  url("./assets/fonts/BaronNeue.ttf") format("truetype"), /* Safari, Android, iOS */
+  url("./assets/fonts/BaronNeue.woff") format("woff"), /* Modern Browsers */
+  url("./assets/fonts/BaronNeue.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/*-------------------- Global Styles --------------------*/
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+:root {
+  --white: #ffffff;
+}
+

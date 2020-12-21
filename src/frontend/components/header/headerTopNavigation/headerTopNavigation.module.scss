@@ -1,0 +1,21 @@
+.header__top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  background: rgba(0,0,0,0.3);
+  padding: 15px;
+}
+
+.header__top-nav i {
+  font-size: 20px;
+}
+
+.header__top-nav__text {
+  margin-left: 5px;
+}
+
+.menu__btn {
+  display: none;
+  position: relative;
+}

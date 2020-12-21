@@ -1,0 +1,16 @@
+.header {
+  font-family: 'BaronNeue', sans-serif;
+  font-weight: 400;
+  color: var(--white);
+  background-image: url('../../../assets/images/header_bg.jpg');
+  background-size: cover;
+}
+
+.header a {
+  border-bottom: 2px solid transparent;
+  color: var(--white);
+}
+
+.header a:hover {
+  border-bottom: 2px solid var(--white);
+}
