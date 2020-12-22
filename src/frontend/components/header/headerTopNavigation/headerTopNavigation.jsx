@@ -12,6 +12,7 @@ import {handleOpenModalWindow} from '@/frontend/redux/actions/actions'
 const HeaderTopNavigation = (props) => {
   console.log('props', props)
   const {open} = props.stateModalWindow
+  const {handleOpenModalWindow} = props
 
   const useStyles = makeStyles((theme) => ({
     modal: {
