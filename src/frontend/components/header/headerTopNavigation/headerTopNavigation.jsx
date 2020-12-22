@@ -2,36 +2,42 @@ import React from 'react'
 import styles from './headerTopNavigation.module.scss'
 import HeaderTopNavigationSocial
   from '@/frontend/components/header/headerTopNavigation/headerTopNavigationSocial/headerTopNavigationSocial'
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import Modal from '@material-ui/core/Modal'
+import Backdrop from '@material-ui/core/Backdrop'
+import Fade from '@material-ui/core/Fade'
+import {makeStyles} from '@material-ui/core/styles'
+import {connect} from 'react-redux'
 
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
+const HeaderTopNavigation = (props) => {
+  console.log('props', props)
 
-const HeaderTopNavigation = () => {
+  const useStyles = makeStyles((theme) => ({
+    modal: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    paper: {
+      backgroundColor: theme.palette.background.paper,
+      border: '2px solid #000',
+      boxShadow: theme.shadows[5],
+      padding: theme.spacing(2, 4, 3),
+    },
+  }));
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
-    setOpen(true);
+  const handleOpen = (text) => {
+    console.log('test', text)
+    if (text) setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
   };
+
+
   return (
     <ul className={styles['header__top-nav']}>
       <li>
@@ -49,7 +55,7 @@ const HeaderTopNavigation = () => {
       <li>
         <span>
           <i className="fas fa-user"></i>
-          <span className={styles['header__top-nav__text']} onClick={handleOpen}>Вход / регистрация</span>
+          <span className={styles['header__top-nav__text']} onClick={() => handleOpen('test')}>Вход / регистрация</span>
         </span>
       </li>
       <li>
@@ -65,7 +71,6 @@ const HeaderTopNavigation = () => {
         </a>
       </li>
       <li className={styles['menu__btn']}>
-
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
@@ -90,7 +95,11 @@ const HeaderTopNavigation = () => {
   )
 }
 
-export default HeaderTopNavigation
+const mapStateToProps = (state) => ({
+  open: state.modalWindowReducer
+})
+
+export default connect(mapStateToProps)(HeaderTopNavigation)
 
 
 
