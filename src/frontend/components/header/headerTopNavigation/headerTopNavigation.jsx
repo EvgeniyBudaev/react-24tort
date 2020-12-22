@@ -7,9 +7,11 @@ import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
 import {makeStyles} from '@material-ui/core/styles'
 import {connect} from 'react-redux'
+import {handleOpenModalWindow} from '@/frontend/redux/actions/actions'
 
 const HeaderTopNavigation = (props) => {
   console.log('props', props)
+  const {open} = props.stateModalWindow
 
   const useStyles = makeStyles((theme) => ({
     modal: {
@@ -26,15 +28,14 @@ const HeaderTopNavigation = (props) => {
   }));
 
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
-  const handleOpen = (text) => {
-    console.log('test', text)
-    if (text) setOpen(true);
+  const handleOpen = () => {
+    // setOpen(true);
   };
 
   const handleClose = () => {
-    setOpen(false);
+    // setOpen(false);
   };
 
 
@@ -55,7 +56,7 @@ const HeaderTopNavigation = (props) => {
       <li>
         <span>
           <i className="fas fa-user"></i>
-          <span className={styles['header__top-nav__text']} onClick={() => handleOpen('test')}>Вход / регистрация</span>
+          <span className={styles['header__top-nav__text']} onClick={handleOpenModalWindow}>Вход / регистрация</span>
         </span>
       </li>
       <li>
@@ -96,10 +97,15 @@ const HeaderTopNavigation = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-  open: state.modalWindowReducer
+  stateModalWindow: state.modalWindowReducer
 })
 
-export default connect(mapStateToProps)(HeaderTopNavigation)
+const mapDispatchToProps = ({
+  handleOpenModalWindow
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderTopNavigation)
 
 
 

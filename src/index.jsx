@@ -6,7 +6,8 @@ import './index.scss'
 import App from "@/frontend/components/app"
 import store from '@/frontend/redux/store'
 
-
+// DEV ONLY!!!
+window.store = store
 
 ReactDOM.render(
   <Provider store={store}>
