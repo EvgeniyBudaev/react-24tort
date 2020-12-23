@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import {Link} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
 import styles from './login.module.scss'
 import {handleCloseModalWindow} from '@/frontend/redux/actions/actions'
-import {connect} from 'react-redux'
 
-const Login = (props) => {
-  const {handleCloseModalWindow} = props
+
+const Login = () => {
+  const dispatch = useDispatch()
+
+  const closeModal = useCallback(() => dispatch(handleCloseModalWindow()), [dispatch])
+
   return (
     <div className={styles.login}>
       <div className={styles.login__header}>
@@ -25,7 +29,7 @@ const Login = (props) => {
           />
           <div className={styles.login__btns}>
             <button>Войти</button>
-            <Link to="/registration" onClick={handleCloseModalWindow}>Регистрация</Link>
+            <Link to="/registration" onClick={closeModal}>Регистрация</Link>
           </div>
         </form>
       </div>
@@ -33,12 +37,4 @@ const Login = (props) => {
   )
 }
 
-const mapStateToProps = (state) => ({
-  stateModalWindow: state.modalWindowReducer
-})
-
-const mapDispatchToProps = ({
-  handleCloseModalWindow
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default Login
