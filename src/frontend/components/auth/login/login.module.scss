@@ -2,13 +2,13 @@
   border: 4px solid var(--gray);
 }
 
-.login__header {
+.header {
   background-color: var(--lightGray);
   border-bottom: 4px solid var(--gray);
   padding: 18px 5px;
 }
 
-.login__header h3 {
+.header h3 {
   font-size: 20px;
   font-family: "Oswald-Regular", san-serif;
   color: #555555;
@@ -16,11 +16,11 @@
   text-align: center;
 }
 
-.login__content {
+.content {
   padding: 35px 30px;
 }
 
-.login__input {
+.input {
   font-size: 15px;
   font-family: "HelveticaNeueCyr-Light", san-serif;
   height: 38px;
@@ -31,11 +31,11 @@
   outline: transparent;
 }
 
-.login__btns {
+.btns {
   margin-top: 10px;
 }
 
-.login__btns button, .login__btns a {
+.btns button, .btns a {
   font-size: 17px;
   font-weight: 400;
   letter-spacing: 2px;
@@ -54,7 +54,7 @@
   display: block;
 }
 
-.login__btns button:hover,
-.login__btns a:hover {
+.btns button:hover,
+.btns a:hover {
   background-color: var(--hoverRed);
 }

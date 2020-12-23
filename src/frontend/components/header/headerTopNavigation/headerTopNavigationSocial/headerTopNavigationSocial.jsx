@@ -3,7 +3,7 @@ import styles from './headerTopNavigationSocial.module.scss'
 
 const HeaderTopNavigationSocial = () => {
   return (
-    <ul className={styles['header__top-nav__social']}>
+    <ul className={styles['social']}>
       <li>
         <a href="/">
           <i className="fas fa-home"></i>

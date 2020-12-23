@@ -13,7 +13,7 @@ const HeaderTopNavigation = (props) => {
   const {handleOpenModalWindow} = props
 
   return (
-    <ul className={styles['header__top-nav']}>
+    <ul className={styles['nav']}>
       <li>
         <a href="#">
           <span>8 (495) 987-37-44</span>
@@ -29,19 +29,19 @@ const HeaderTopNavigation = (props) => {
       <li>
         <span>
           <i className="fas fa-user"></i>
-          <span className={styles['header__top-nav__text']} onClick={handleOpenModalWindow}>Вход / регистрация</span>
+          <span className={styles['text']} onClick={handleOpenModalWindow}>Вход / регистрация</span>
         </span>
       </li>
       <li>
         <NavLink to={ROUTES.SEARCH}>
           <i className="fas fa-search"></i>
-          <span className={styles['header__top-nav__text']}>Поиск</span>
+          <span className={styles['text']}>Поиск</span>
         </NavLink>
       </li>
       <li>
         <a href="/basket/">
           <i className="fas fa-shopping-cart"></i>
-          <span className={styles['header__top-nav__text']}>Корзина (<span id="basket__count">0</span>)</span>
+          <span className={styles['text']}>Корзина (<span id="basket__count">0</span>)</span>
         </a>
       </li>
       <li className={styles['menu__btn']}>

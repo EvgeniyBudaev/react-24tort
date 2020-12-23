@@ -1,4 +1,4 @@
-.header__top-nav {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,11 +8,11 @@
   padding: 15px;
 }
 
-.header__top-nav i {
+.nav i {
   font-size: 20px;
 }
 
-.header__top-nav__text {
+.text {
   text-transform: uppercase;
   margin-left: 5px;
   cursor: pointer;
@@ -22,7 +22,7 @@
   transition: all .3s;
 }
 
-.header__top-nav__text:hover {
+.text:hover {
   border-bottom: 2px solid var(--white);
 }
 
