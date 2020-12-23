@@ -54,7 +54,7 @@
     "@fancyapps/fancybox": "^3.5.7",
     "@material-ui/core": "^4.11.2",
     "connected-react-router": "^6.8.0",
-    "history": "^5.0.0",
+    "history": "^4.10.1",
     "jquery": "^3.5.1",
     "lodash": "^4.17.20",
     "normalize.css": "^8.0.1",

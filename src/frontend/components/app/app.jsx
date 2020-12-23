@@ -10,7 +10,9 @@ const App = () => {
     <div className={styles.container}>
       <Header />
       <Switch>
+        <Route path="/" component={() => <h1>Главная страница</h1>} exact  />
         <Route path="/registration" component={Registration} exact />
+        <Route path="/search/" component={() => <h1>Страница поиска</h1>} exact />
       </Switch>
     </div>
   )

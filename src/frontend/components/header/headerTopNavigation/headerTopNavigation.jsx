@@ -1,8 +1,9 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {NavLink} from 'react-router-dom'
 import styles from './headerTopNavigation.module.scss'
 import HeaderTopNavigationSocial
   from '@/frontend/components/header/headerTopNavigation/headerTopNavigationSocial/headerTopNavigationSocial'
-import {connect} from 'react-redux'
 import {handleOpenModalWindow} from '@/frontend/redux/actions/actions'
 
 
@@ -31,10 +32,10 @@ const HeaderTopNavigation = (props) => {
         </span>
       </li>
       <li>
-        <a href="/search/">
+        <NavLink to="/search/">
           <i className="fas fa-search"></i>
           <span className={styles['header__top-nav__text']}>Поиск</span>
-        </a>
+        </NavLink>
       </li>
       <li>
         <a href="/basket/">
