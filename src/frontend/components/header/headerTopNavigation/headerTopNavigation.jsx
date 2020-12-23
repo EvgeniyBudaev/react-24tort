@@ -5,6 +5,7 @@ import styles from './headerTopNavigation.module.scss'
 import HeaderTopNavigationSocial
   from '@/frontend/components/header/headerTopNavigation/headerTopNavigationSocial/headerTopNavigationSocial'
 import {handleOpenModalWindow} from '@/frontend/redux/actions/actions'
+import {ROUTES} from '@/frontend/routes'
 
 
 const HeaderTopNavigation = (props) => {
@@ -32,7 +33,7 @@ const HeaderTopNavigation = (props) => {
         </span>
       </li>
       <li>
-        <NavLink to="/search/">
+        <NavLink to={ROUTES.SEARCH}>
           <i className="fas fa-search"></i>
           <span className={styles['header__top-nav__text']}>Поиск</span>
         </NavLink>

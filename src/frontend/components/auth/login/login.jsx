@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import styles from './login.module.scss'
 import {handleCloseModalWindow} from '@/frontend/redux/actions/actions'
+import {ROUTES} from '@/frontend/routes'
 
 
 const Login = () => {
@@ -29,7 +30,7 @@ const Login = () => {
           />
           <div className={styles.login__btns}>
             <button>Войти</button>
-            <Link to="/registration" onClick={closeModal}>Регистрация</Link>
+            <Link to={ROUTES.REGISTRATION} onClick={closeModal}>Регистрация</Link>
           </div>
         </form>
       </div>
