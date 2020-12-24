@@ -5,22 +5,32 @@ import styles from './login.module.scss'
 import {handleCloseModalWindow} from '@/frontend/redux/actions/actions'
 import {ROUTES} from '@/frontend/routes'
 import Inputmask from "inputmask";
+import axios from 'axios'
 
 const Login = () => {
-  const [telephone, setTelephone] = useState('')
+  const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
   const closeModal = useCallback(() => dispatch(handleCloseModalWindow()), [dispatch])
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(telephone, password)
+    console.log('handleSubmit', login, password)
   }
 
   useEffect(() => {
-    const selector = document.getElementById("login__input");
-    const im = new Inputmask("+7(999)-999-99-99");
-    im.mask(selector);
+    // Маска для поля ввода телефона
+    const selector = document.getElementById("login__input")
+    const im = new Inputmask("+7(999)-999-99-99")
+    im.mask(selector)
+
+    axios(`https://24tort.ru/api/AccountAPI/ShopperAuthentication`, {
+      method: 'POST',
+      data: {
+          login: "+7(444)444-44-44",
+          password: "12345"
+      }
+    })
   }, [])
 
   return (
@@ -35,9 +45,8 @@ const Login = () => {
             id="login__input"
             className={styles.input}
             placeholder="Телефон"
-            ref={input => input && input.focus()}
-            value={telephone}
-            onChange={event => setTelephone(event.target.value)}
+            value={login}
+            onChange={event => setLogin(event.target.value)}
           />
           <input
             type="text"
